@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"reflect"
+	"strconv"
 	"strings"
 )
 
@@ -60,4 +62,88 @@ func parseRawArray(rawArray string) (splits []string, err error) {
 		return nil, invalidInput
 	}
 	return
+}
+
+func parseRawArg(tp reflect.Type, rawData string) (v reflect.Value, err error) {
+	rawData = strings.TrimSpace(rawData)
+	invalidError := fmt.Errorf("invalid test data %s", rawData)
+
+	switch tp.Kind() {
+	case reflect.String:
+		if len(rawData) <= 1 || rawData[0] != '"' && rawData[0] != '\'' || rawData[len(rawData) - 1] != rawData[0] {
+			return reflect.Value{}, invalidError
+		}
+		// Remove " or ' from start and end
+		v = reflect.ValueOf(rawData[1 : len(rawData) - 1])
+	
+	case reflect.Uint8: // byte
+		// rawData like "a" or 'a'
+		if len(rawData) != 3 || rawData[0] != '"' && rawData[0] != '\'' || rawData[2] != rawData[0] {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(rawData[1])
+
+	case reflect.Int: 
+		i, err := strconv.Atoi(rawData)
+		if err != nil {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(i)
+
+	case reflect.Uint: 
+		i, err := strconv.Atoi(rawData)
+		if err != nil {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(uint(i))
+
+	case reflect.Int64:
+		i, err := strconv.ParseInt(rawData, 10, 64)
+		if err != nil {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(i)
+	
+	case reflect.Uint64:
+		i, err := strconv.ParseUint(rawData, 10, 64)
+		if err != nil {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(i)
+	
+	case reflect.Float64:
+		f, err := strconv.ParseFloat(rawData, 64)
+		if err != nil {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(f)
+	
+	case reflect.Bool:
+		b, err := strconv.ParseBool(rawData)
+		if err != nil {
+			return reflect.Value{}, invalidError
+		}
+		v = reflect.ValueOf(b)
+	
+	case reflect.Slice:
+		splits, err := parseRawArray(rawData)
+		if err != nil {
+			return reflect.Value{}, err
+		}
+		v = reflect.New(tp).Elem()
+		for _, s := range splits {
+			_v, err := parseRawArg(tp.Elem(), s)
+			if err != nil {
+				return reflect.Value{}, err
+			}
+			v = reflect.Append(v, _v)
+		}
+	
+	case reflect.Pointer: //*TreeNode, *ListNode, *Point, *Interval
+		switch tmpName := tp.Elem().Name(); tmpName {
+		case "TreeNode": 
+			
+		}
+	}
+
 }
