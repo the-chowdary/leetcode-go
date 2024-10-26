@@ -1,4 +1,4 @@
-package main 
+package main
 
 // https://leetcode.com/problems/contains-duplicate/
 func containsDuplicates(nums []int) bool {
@@ -6,7 +6,7 @@ func containsDuplicates(nums []int) bool {
 		return false
 	}
 
-	count := make(map[int] struct{})
+	count := make(map[int]struct{})
 
 	for _, num := range nums {
 		if _, ok := count[num]; ok {
@@ -15,4 +15,9 @@ func containsDuplicates(nums []int) bool {
 		count[num] = struct{}{}
 	}
 	return false
+}
+
+func main() {
+	nums := []int{1, 2, 3, 1}
+	containsDuplicates(nums)
 }

@@ -7,11 +7,11 @@ import (
 
 func Test_groupAnagrams(t *testing.T) {
 	t.Log("Currently testing [groupAnagrams]")
-	examples := [][]string {
+	examples := [][]string{
 		// {
 		// 	`["eat","tea","tan","ate","nat","bat"]`,
 		// 	`[["bat"],["nat","tan"],["ate","eat","tea"]]`,
-		// }, 
+		// },
 		{
 			`[""]`,
 			`[[""]]`,

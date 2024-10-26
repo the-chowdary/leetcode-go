@@ -40,7 +40,7 @@ jobs:
             go: '1.22.x'
             gotests: true
             integrationtest: true
-            check: false
+            check: true
 
     name: ${{ matrix.job_name }}
 
@@ -86,7 +86,7 @@ jobs:
       - name: Unit tests
         shell: bash
         run: |
-          go test -v
+          go test ./...
         if: matrix.gotests
 
       - name: Code quality test

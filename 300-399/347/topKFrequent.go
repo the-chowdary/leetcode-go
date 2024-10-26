@@ -1,4 +1,4 @@
-package main 
+package main
 
 // https://leetcode.com/problems/top-k-frequent-elements/
 func topKFrequent(nums []int, k int) []int {
@@ -19,4 +19,10 @@ func topKFrequent(nums []int, k int) []int {
 		result = append(result, countSlice[i]...)
 	}
 	return result
+}
+
+func main() {
+	nums := []int{1, 1, 1, 2, 2, 3}
+	k := 2
+	topKFrequent(nums, k)
 }

@@ -7,7 +7,7 @@ import (
 
 func Test_isPalindrome(t *testing.T) {
 	t.Log("Currently testing [isPalindrome]")
-	examples := [][] string{
+	examples := [][]string{
 		{
 			`"A man, a plan, a canal: Panama"`,
 			`true`,

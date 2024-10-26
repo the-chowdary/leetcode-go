@@ -7,16 +7,21 @@ import (
 
 // https://leetcode.com/problems/remove-sub-folders-from-the-filesystem
 func removeSubfolders(folder []string) []string {
-    sort.Strings(folder)
+	sort.Strings(folder)
 
-    result := []string { folder[0] }
+	result := []string{folder[0]}
 
-    for i := 1; i < len(folder); i++ {
-        lastFolder := result[len(result) - 1] + "/"
+	for i := 1; i < len(folder); i++ {
+		lastFolder := result[len(result)-1] + "/"
 
-        if !strings.HasPrefix(folder[i], lastFolder) {
-            result = append(result, folder[i])
-        }
-    }
-    return result
+		if !strings.HasPrefix(folder[i], lastFolder) {
+			result = append(result, folder[i])
+		}
+	}
+	return result
+}
+
+func main() {
+	folder := []string{"/a", "/a/b", "/c/d", "/c/d/e", "/c/f"}
+	removeSubfolders(folder)
 }

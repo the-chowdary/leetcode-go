@@ -2,9 +2,10 @@ package testutil
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_isTLE(t *testing.T) {

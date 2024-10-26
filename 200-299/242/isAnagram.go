@@ -8,3 +8,8 @@ func isAnagram(s string, t string) bool {
 	sort.Slice(tBytes, func(x, y int) bool { return tBytes[x] < tBytes[y] })
 	return string(sBytes) == string(tBytes)
 }
+
+func main() {
+	s, t := "anagram", "nagaram"
+	isAnagram(s, t)
+}

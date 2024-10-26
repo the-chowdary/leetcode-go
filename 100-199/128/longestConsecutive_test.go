@@ -7,7 +7,7 @@ import (
 
 func Test_longestConsecutive(t *testing.T) {
 	t.Log("Currently testing [longestConsecutive]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`[100,4,200,1,3,2]`,
 			`4`,

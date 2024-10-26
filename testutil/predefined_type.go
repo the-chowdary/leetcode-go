@@ -294,8 +294,6 @@ func ModifyNodes(head *ListNode, f func([]int) []int) *ListNode {
 	return BuildListNodeFromInts(res)
 }
 
-
-
 func MustBuildTreeNode(rawArray string) *TreeNode {
 	root, err := buildTreeNode(rawArray)
 	if err != nil {
@@ -311,7 +309,6 @@ func MustBuildListNode(rawArray string) *ListNode {
 	}
 	return head
 }
-
 
 // https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/
 type Node struct {

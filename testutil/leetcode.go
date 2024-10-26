@@ -411,7 +411,7 @@ func RunLeetCodeClassWithExamples(t *testing.T, constructor interface{}, rawExam
 		for i, name := range methodNames {
 			name = name[1 : len(name)-1] // 移除引号
 			titleCaser := cases.Title(language.English)
-			name = titleCaser.String(name)  // 首字母大写以匹配模板方法名称
+			name = titleCaser.String(name) // 首字母大写以匹配模板方法名称
 			methodNames[i] = name
 		}
 
@@ -483,7 +483,7 @@ func RunLeetCodeClassWithExamples(t *testing.T, constructor interface{}, rawExam
 					allCasesOk = false
 					t.Errorf("【【超时 %d】】\nCall Index %d", curCaseNum+1, callIndex)
 					return // 直接跑下一个测试用例
-				} 
+				}
 				if targetCaseNum != 0 {
 					_f()
 				}

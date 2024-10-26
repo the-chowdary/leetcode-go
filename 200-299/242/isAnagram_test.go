@@ -7,7 +7,7 @@ import (
 
 func Test_isAnagram(t *testing.T) {
 	t.Log("Currently testing [isAnagram]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`"anagram"`, `"nagaram"`,
 			`true`,

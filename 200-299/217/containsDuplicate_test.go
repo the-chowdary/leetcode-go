@@ -7,7 +7,7 @@ import (
 
 func Test_containsDuplicate(t *testing.T) {
 	t.Log("Currently testing [containsDuplicate]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`[1,2,3,1]`,
 			`true`,

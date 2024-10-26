@@ -7,7 +7,7 @@ import (
 
 func Test_removeSubfolders(t *testing.T) {
 	t.Log("Currently testing [removeSubfolders]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`["/a","/a/b","/c/d","/c/d/e","/c/f"]`,
 			`["/a","/c/d","/c/f"]`,

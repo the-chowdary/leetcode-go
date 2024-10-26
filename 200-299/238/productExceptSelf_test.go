@@ -7,7 +7,7 @@ import (
 
 func Test_productExceptSelf(t *testing.T) {
 	t.Log("Currently testing [productExceptSelf]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`[1,2,3,4]`,
 			`[24,12,8,6]`,

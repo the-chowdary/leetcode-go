@@ -7,7 +7,7 @@ import (
 
 func Test_topKFrequent(t *testing.T) {
 	t.Log("Currently testing [topKFrequent]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`[1,1,1,2,2,3]`, `2`,
 			`[1,2]`,

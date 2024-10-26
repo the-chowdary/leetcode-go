@@ -7,7 +7,7 @@ import (
 
 func Test_numIslands(t *testing.T) {
 	t.Log("Currently testing [numIslands]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`[
 				["1","1","1","1","0"],

@@ -7,7 +7,7 @@ import (
 
 func Test_maxUniqueSplit(t *testing.T) {
 	t.Log("current test executing for [MaxUniqueSplit]")
-	examples := [][]string {
+	examples := [][]string{
 		{
 			`"ababccc"`,
 			`5`,
