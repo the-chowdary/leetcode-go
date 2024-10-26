@@ -16,7 +16,7 @@ on:
     inputs:
       manual:
         required: true
-        default: true
+        default: "true"
 
 jobs:
   build:
