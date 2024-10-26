@@ -1,3 +1,7 @@
+package main
+
+import . "leetcode-go/testutil"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -8,8 +12,6 @@
  */
 
 //  https://leetcode.com/problems/cousins-in-binary-tree-ii
-// Biweekly 102
-
  func replaceValueInTree(root *TreeNode) *TreeNode {
     root.Val = 0
     q := []*TreeNode{root}

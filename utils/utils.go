@@ -6,7 +6,7 @@ import (
 )
 
 // sort the given string
-func sortString(s string) string {
+func SortString(s string) string {
 	chars := strings.Split(s, "")
 	sort.Strings(chars)
 	return strings.Join(chars, "")

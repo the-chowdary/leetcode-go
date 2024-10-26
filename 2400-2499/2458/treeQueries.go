@@ -1,5 +1,7 @@
 package main
 
+import . "leetcode-go/testutil"
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -8,6 +10,7 @@ package main
  *     Right *TreeNode
  * }
  */
+
 func treeQueries(root *TreeNode, queries []int) []int {
     height := map[*TreeNode]int{}
 

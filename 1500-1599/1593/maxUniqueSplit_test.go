@@ -1,23 +1,28 @@
 package main
 
-import "testing"
+import (
+	"leetcode-go/testutil"
+	"testing"
+)
 
-func TestMaxUniqueSplit(t *testing.T) {
+func Test_maxUniqueSplit(t *testing.T) {
 	t.Log("current test executing for [MaxUniqueSplit]")
-	testCases := [][]string {
+	examples := [][]string {
 		{
 			`"ababccc"`,
-			`"5"`,
+			`5`,
 		},
 		{
 			`"aba"`,
-			`"2"`,
+			`2`,
 		},
 		{
 			`"aa"`,
-			`"1`,
+			`1`,
 		},
 	}
 	targetCaseNum := 0
-	// Implement testutil
+	if err := testutil.RunLeetCodeFuncWithExamples(t, maxUniqueSplit, examples, targetCaseNum); err != nil {
+		t.Fatal(err)
+	}
 }

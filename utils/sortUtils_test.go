@@ -2,7 +2,7 @@ package utils
 
 import "testing"
 
-func TestSortUtils(t *testing.T) {
+func TestUtils(t *testing.T) {
 	got := SortString("cab")
 	want := "abc"
 

@@ -6,10 +6,13 @@
  *     Right *TreeNode
  * }
  */
+ 
+package main
+
+import . "leetcode-go/testutil"
 
 //  https://leetcode.com/problems/flip-equivalent-binary-trees
-
- func flipEquiv(root1 *TreeNode, root2 *TreeNode) bool {
+func flipEquiv(root1 *TreeNode, root2 *TreeNode) bool {
     if root1 == nil && root2 == nil {
         return true
     }
