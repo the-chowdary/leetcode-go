@@ -1,3 +1,11 @@
+/*
+Implemented numIslands
+1. Get rows and cols length
+2. Iterate the grid and if grid[i][j] == 1 then dfs(i, j) and result++
+3. dfs() -> check out of bounds cases and if grid[i][j] != 1 then return
+4. Mark grid[i][j] = 1 -> Making it as visited
+5. dfs in all directions(left, right top, bottom)
+*/
 package main
 
 func numIslands(grid [][]byte) (result int) {

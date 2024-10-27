@@ -1,3 +1,10 @@
+/*
+Implemented kthLargestLevelSum
+1. BFS the solution
+2. while q append root.Left and root.Right if they exist
+3. if k > len(result) return -1
+4. sort the result array and return result[len(result) - k] for the kthLargestLevelSum
+*/
 package main
 
 import (

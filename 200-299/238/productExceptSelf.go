@@ -1,3 +1,8 @@
+/*
+Implemted productExceptSelf
+1. Initialize result array with size of len(nums) and mark all positions in result to 1
+2. Iterate the array and see steps 19 to 22
+*/
 package main
 
 func productExceptSelf(nums []int) []int {

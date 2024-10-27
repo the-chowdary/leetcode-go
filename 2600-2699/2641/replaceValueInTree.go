@@ -1,3 +1,6 @@
+/*
+Implemented replaceValueTree
+*/
 package main
 
 import . "leetcode-go/testutil"
@@ -11,7 +14,7 @@ import . "leetcode-go/testutil"
  * }
  */
 
-//  https://leetcode.com/problems/cousins-in-binary-tree-ii
+// https://leetcode.com/problems/cousins-in-binary-tree-ii
 func replaceValueInTree(root *TreeNode) *TreeNode {
 	root.Val = 0
 	q := []*TreeNode{root}

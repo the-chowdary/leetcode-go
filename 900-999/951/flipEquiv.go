@@ -1,3 +1,13 @@
+/*
+Implemented flipEquiv
+1. if both root1 and root2 are nil return true
+2. if root1 is nil or root2 is nil return false
+3. if root1.Val != root2.Val return false
+4. recurse with flipEquiv(root1.Left, root2.Left) && flipEquiv(root1.Right, root2.Right) and store in result
+5. If result return true
+6. else flipEquiv(root1.Left, root2.Right) && flipEquiv(root1.Right, root2.Left)
+*/
+
 /**
  * Definition for a binary tree node.
  * type TreeNode struct {
@@ -6,12 +16,11 @@
  *     Right *TreeNode
  * }
  */
-
 package main
 
 import . "leetcode-go/testutil"
 
-//  https://leetcode.com/problems/flip-equivalent-binary-trees
+// https://leetcode.com/problems/flip-equivalent-binary-trees
 func flipEquiv(root1 *TreeNode, root2 *TreeNode) bool {
 	if root1 == nil && root2 == nil {
 		return true

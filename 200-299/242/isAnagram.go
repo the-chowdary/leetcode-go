@@ -1,3 +1,9 @@
+/*
+Implemented isAnagram
+1. Convert string to byte array
+2. Sort the byte array for both s and t
+3. return s == t after sorting
+*/
 package main
 
 import "sort"

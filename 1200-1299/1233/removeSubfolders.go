@@ -1,3 +1,10 @@
+/*
+Implemented removeSubfolders
+1. sort the folder array and assign result with folder[0]
+2. Iterate from 1 to len(folder)
+3. Get last folder and append '/'
+4. Check if folder[i] has lastFolder as prefix if not it is a valid subfolder
+*/
 package main
 
 import (

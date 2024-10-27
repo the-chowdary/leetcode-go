@@ -1,3 +1,10 @@
+/*
+Implemented longestConsecutive
+1. Have a hashMap for numbers for num in numbers make hashMap[num] = true
+2. Iterate nums if (num - 1) not in hashMap start of sequence
+3. For every hashMap[num + length] increment length++
+4. Get max(longest, length) into longest
+*/
 package main
 
 func longestConsecutive(nums []int) int {

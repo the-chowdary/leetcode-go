@@ -1,3 +1,6 @@
+/*
+Contains util functions
+*/
 package utils
 
 import "testing"

@@ -1,3 +1,8 @@
+/*
+Implemented groupAnagrams
+1. sorting each word and storing in hashMap[sortedWord] = word
+2. Iterating the hasMap and storing anagram words in result array
+*/
 package main
 
 import (

@@ -1,3 +1,9 @@
+/*
+Implemented containsDuplicates
+1. hashmap to count all the elementes
+2. Iterate the hashmap if num already exist return true
+3. If no duplicate found return false
+*/
 package main
 
 // https://leetcode.com/problems/contains-duplicate/

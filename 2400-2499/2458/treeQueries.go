@@ -1,3 +1,11 @@
+/*
+Implemented treeQueries
+1. Calculate height of the tree treeHeight()
+2. create result array with len(height)
+3. dfs the root -> update result[root.Val] = rest-height
+4. dfs root.Left with max(rest_height, depth + height[root.Right])
+5. dfs root.Right with max(rest_height, depth + height[root.Left])
+*/
 package main
 
 import . "leetcode-go/testutil"

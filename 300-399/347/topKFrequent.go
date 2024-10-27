@@ -1,3 +1,9 @@
+/*
+Implmented topKFrequent
+1. Have countMap and iterate nums and count nums and update countMap
+2. Iterate countMap and store countSlice[count] with num
+3. Iterate the countSlice till len(result) != k (to get top k elements)
+*/
 package main
 
 // https://leetcode.com/problems/top-k-frequent-elements/
