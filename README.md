@@ -1,3 +1,3 @@
 # leetcode-go
 
-![Github Workflow Status](https://github.com/the-chowdary/leetcode-go/actions/workflows/build.yml/badge.svg)
+[![Build Status](https://github.com/the-chowdary/leetcode-go/workflows/build/badge.svg)](https://github.com/the-chowdary/leetcode-go/actions?query=workflow%3Abuild)
