@@ -4,6 +4,8 @@ Implemented spiralOrder : https://leetcode.com/problems/spiral-matrix/descriptio
 2. Iterate and store matrix[i][j] in result and mark it visited
 3. go to next direction and check out of bounds if out of bounds change direction
 4. finally update i and j
+
+Similar problem : https://leetcode.com/problems/robot-bounded-in-circle/description/
 */
 package main
 
