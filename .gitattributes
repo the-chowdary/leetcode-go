@@ -1,0 +1,3 @@
+# Go writes go.mod and go.sum with lf even on windows
+go.mod text eol=lf
+go.sum text eol=lf
