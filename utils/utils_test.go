@@ -28,3 +28,21 @@ func TestSum(t *testing.T) {
 		t.Errorf("got %d, want %d", got, want)
 	}
 }
+
+func TestMaxNum(t *testing.T) {
+	got := MaxNum(2, 3)
+	want := 3
+
+	if got != want {
+		t.Errorf("got %d, want %d", got, want)
+	}
+}
+
+func TestMinNum(t *testing.T) {
+	got := MinNum(2, 3)
+	want := 2
+
+	if got != want {
+		t.Errorf("got %d, want %d", got, want)
+	}
+}

@@ -32,3 +32,19 @@ func Sum(numbers []int) (result int) {
 	}
 	return
 }
+
+// MaxNum returns max(x, y)
+func MaxNum(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
+}
+
+// MinNum return min(x, y)
+func MinNum(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
