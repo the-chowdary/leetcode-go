@@ -4,6 +4,9 @@
 2. Enter the window
 3. Update the result mostly will be max or min
 4. Leave the window
+
+Similar problems:
+1. 643 : https://leetcode.com/problems/maximum-average-subarray-i/description/
 */
 package main
 
