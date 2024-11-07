@@ -1,6 +1,10 @@
 /*
+3011 :https://leetcode.com/problems/find-if-array-can-be-sorted/
 1. Have 2 loops inner loop to go till end of array or if bitCount == ones
 2. Exchange the elements
+
+Similar Problems:
+1446 : https://leetcode.com/problems/consecutive-characters/description/
 */
 package main
 
