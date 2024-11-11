@@ -3,6 +3,9 @@
 
 1. Identify all primes using sieve of eratosthenes
 2. Identify the small prime and subtract the num by traversing.
+
+Similar problems :
+2523 : https://leetcode.com/problems/closest-prime-numbers-in-range/description/
 */
 package main
 
