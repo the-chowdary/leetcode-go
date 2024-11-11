@@ -13,7 +13,9 @@ package main
 
 import "math"
 
-var DIRS = [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}} // DIRS right, down, left, up
+// DIRS right, down, left, up
+var DIRS = [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
+
 func spiralOrder(matrix [][]int) []int {
 	rows, cols := len(matrix), len(matrix[0])
 	result := make([]int, (rows * cols))

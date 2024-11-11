@@ -11,7 +11,9 @@ Similar Problems:
 */
 package main
 
-var DIRS = [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}} // DIRS east, south, west, north
+// DIRS east, south, west, north
+var DIRS = [4][2]int{{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
+
 func robotSim(commands []int, obstacles [][]int) int {
 	obstacleSet := make(map[[2]int]struct{})
 	for _, obs := range obstacles {
