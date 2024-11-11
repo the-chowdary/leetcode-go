@@ -5,6 +5,7 @@
 2. Identify the small prime and subtract the num by traversing.
 
 Similar problems :
+204 : https://leetcode.com/problems/count-primes/
 2523 : https://leetcode.com/problems/closest-prime-numbers-in-range/description/
 */
 package main

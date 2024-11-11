@@ -4,6 +4,7 @@
 2. Find left and right minimum
 
 Similar Problems:
+204 : https://leetcode.com/problems/count-primes/
 2601 : https://leetcode.com/problems/prime-subtraction-operation
 */
 package main
