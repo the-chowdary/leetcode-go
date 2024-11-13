@@ -7,6 +7,7 @@
 
 Similar problems:
 1. 643 : https://leetcode.com/problems/maximum-average-subarray-i/description/
+2. 1343 : https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/
 */
 package main
 

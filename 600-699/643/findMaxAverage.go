@@ -4,6 +4,7 @@
 
 Similar problems :
 1456 : https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/
+1343 : https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/
 */
 package main
 
