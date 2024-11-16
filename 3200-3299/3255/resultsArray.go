@@ -1,11 +1,11 @@
 /*
-3254 : https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/description
+3255 : https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/description
 1. Initialize result with size len(nums) - k + 1
 2. Count number of consecutive
 3. if count >= k then update result
 
 Similar Problems:
-3255 : https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/description
+3254 : https://leetcode.com/problems/find-the-power-of-k-size-subarrays-i/description
 */
 package main
 
