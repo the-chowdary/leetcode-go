@@ -3,7 +3,7 @@
 */
 package main
 
-func countUnguarded(nums []int) (result int) {
+func waysToSplitArray(nums []int) (result int) {
 	total := 0
 	for _, x := range nums {
 		total += x
