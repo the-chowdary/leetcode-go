@@ -1,22 +1,16 @@
 ---
-# Github Actions build for swift
-# -*- compile-command: "yamllint -f parsable build.yml" -*-
-
 name: build
 
-# Trigger the workflow on push or pull request
 on:
   push:
     branches:
-      - '*'
+      - 'main'
     tags:
       - '*'
   pull_request:
-  workflow_dispatch:
-    inputs:
-      manual:
-        required: true
-        default: "true"
+
+env:
+  GO_VERSION: '1.23'
 
 jobs:
   build:
@@ -48,28 +42,8 @@ jobs:
       - name: Install Go
         uses: actions/setup-go@v5
         with:
-          go-version: ${{ matrix.go }}
-
-      - name: Print Go version and environment
-        shell: bash
-        run: |
-          printf "Using go at: $(which go)\n"
-          printf "Go version: $(go version)\n"
-          printf "\n\nGo environment:\n\n"
-          go env
-          printf "\n\nSystem environment:\n\n"
-          env
-
-      - name: Go module cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/go/pkg/mod
-            ~/.cache/go-build
-            ~/.cache/golangci-lint
-          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
-          restore-keys: |
-            ${{ runner.os }}-go-
+          go-version: ${{ env.GO_VERSION }}
+          cache: true
 
       - name: Build
         shell: bash
