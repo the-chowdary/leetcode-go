@@ -17,5 +17,5 @@ func differenceOfSums(n int, m int) int {
 }
 
 func main() {
-	
+
 }
