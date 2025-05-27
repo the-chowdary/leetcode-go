@@ -10,7 +10,7 @@ on:
   pull_request:
 
 env:
-  GO_VERSION: '1.23'
+  GO_VERSION: '1.24'
 
 jobs:
   build:
@@ -19,12 +19,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        job_name: ['go1.23']
+        job_name: ['go1.24']
 
         include:
-          - job_name: go1.23
+          - job_name: go1.24
             os: ubuntu-latest
-            go: '1.23.4'
+            go: '1.24.3'
             gotests: true
             integrationtest: true
             check: true
