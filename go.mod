@@ -1,6 +1,6 @@
 module leetcode-go
 
-go 1.22.4
+go 1.23.5
 
 require (
 	github.com/shirou/gopsutil/v3 v3.24.5

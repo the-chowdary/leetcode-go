@@ -1,3 +1,5 @@
+//go:build go1.23
+
 /*
 1338 : https://leetcode.com/problems/reduce-array-size-to-the-half/description/
 1. Count the numbers
