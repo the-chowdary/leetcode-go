@@ -1,11 +1,11 @@
 module leetcode-go
 
-go 1.23.5
+go 1.24.0
 
 require (
 	github.com/shirou/gopsutil/v3 v3.24.5
-	github.com/stretchr/testify v1.9.0
-	golang.org/x/text v0.19.0
+	github.com/stretchr/testify v1.11.1
+	golang.org/x/text v0.32.0
 )
 
 require (
