@@ -1,5 +1,5 @@
 ---
-name: build
+name: Build
 
 on:
   push:
@@ -7,63 +7,74 @@ on:
       - 'main'
     tags:
       - '*'
+    paths-ignore:
+      - '**.md'
   pull_request:
-
-env:
-  GO_VERSION: '1.23'
+    paths-ignore:
+      - '**.md'
 
 permissions:
-  contents: write
-  packages: write
+  contents: read
 
 jobs:
   build:
-    if: ${{ github.repository == 'the-chowdary/leetcode-go' || github.event.inputs.manual }}
-    timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        job_name: ['go1.23']
-
-        include:
-          - job_name: go1.23
-            os: ubuntu-latest
-            go: '1.23.5'
-            gotests: true
-            integrationtest: true
-            check: true
-
-    name: ${{ matrix.job_name }}
-
-    runs-on: ${{ matrix.os }}
-
+    name: Build & Test
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - name: Install Go
+      - name: Set up Go
         uses: actions/setup-go@v6
         with:
-          go-version: ${{ env.GO_VERSION }}
+          go-version-file: go.mod
           cache: true
 
+      - name: Cache Go modules
+        uses: actions/cache@v5
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Install dependencies
+        run: go mod download
+
       - name: Build
-        shell: bash
-        run: |
-          go build ./...
+        run: go build ./...
 
-      - name: Unit tests
-        shell: bash
+      - name: Run tests
         run: |
-          go test ./...
-        if: matrix.gotests
+          go test -v -race -coverprofile=coverage.out ./...
+          go tool cover -html=coverage.out -o coverage.html
 
-      - name: Code quality test
+      - name: Upload coverage reports
+        uses: actions/upload-artifact@v6
+        with:
+          name: coverage-report
+          path: |
+            coverage.out
+            coverage.html
+
+  lint:
+    name: Lint
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Code quality check
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-        env:
-          GO_VERSION: ${{ matrix.go }}
-        if: matrix.check
